@@ -721,6 +721,7 @@ img{
     color: #fff;
     margin: 0 var(--mb-4);
 } */
+ 
 
 @media screen and (min-width:768px){
     body{
@@ -809,6 +810,26 @@ img{
 @media screen and (max-width:768px){
     .projects_container{
         grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 768px) {
+    .home {
+        grid-template-columns: 1fr; /* Single-column layout for small screens */
+        text-align: center;
+    }
+
+    .home_data {
+        align-items: center; /* Center-align for mobile */
+    }
+
+    .home_social {
+        justify-content: center; /* Center social icons */
+    }
+
+    .home_img {
+        margin-top: 2rem;
+        width: 200px;
+        align-items: center;
     }
 }
 
