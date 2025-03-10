@@ -318,11 +318,9 @@ img{
     text-align: center;
     border-radius: 25px; /* Smooth corners */
     padding: 30px; /* Matches the smaller padding of .skills_container */
-    border: 5px solid rgba(255, 255, 255, 0.5); /* Matches semi-transparent border of skills_container */
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent glass effect */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    backdrop-filter: blur(10px); /* Adds modern blur effect */
-    max-width: 900px; /* Matches the width of .skills_container */
+    border: 2px solid #d6e4ff; /* Subtle border for collections */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1000px; /* Matches the width of .skills_container */
     margin: 1.5rem auto; /* Centers the container */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover interaction */
 }
@@ -368,87 +366,97 @@ img{
 
 /* skills */
 /* Skills Container */
+/* Skills Container */
 .skills_container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adaptive columns based on space */
-    gap: 2rem; /* Adds spacing between columns */
-    padding: 45px;
-    border-radius: 25px;
-    border: 5px solid rgba(255, 255, 255, 0.5); /* Matches semi-transparent border of skills_container */
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent glass effect */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    backdrop-filter: blur(10px); /* Adds modern blur effect */
-    max-width: 900px; /* Matches the width of .skills_container */
-    margin: 1.5rem auto; /* Centers the container */
-    transition: transform 0.3s, box-shadow 0.3s; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible grid layout */
+    gap: 2rem; /* Space between skill collections */
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 1050px;
     margin: 2rem auto;
+}
+
+/* Skills Column (Box Styling) */
+.skills_column {
+    padding: 1.5rem;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 2px solid #d6e4ff; /* Subtle border for collections */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
-
-/* Skills Column */
-.skills_column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem; /* Spacing between skill items */
+.skills_column:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Skills Subtitle */
+/* Skills Subtitle (Skill Type Heading) */
 .skills_subtitle {
-    font-size: 1.5rem; /* Slightly larger font for emphasis */
-    font-weight: bold;
-    color: var(--text-color);
-    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #34495e;
     text-transform: uppercase;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient text effect */
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Gradient text effect */
+    -webkit-text-fill-color: transparent;
 }
 
-/* Skill Data Styling */
+/* Skills Data (Individual Skill Items) */
 .skills_data {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    padding: .5rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Subtle raised effect */
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 60%;
+    gap: 0.8rem;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border-radius: 8px;
+    background-color: #fdfdfd; /* Neutral background for each skill */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Minimal shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Skill Icon Styling */
-.skills_icon {
-    font-size: 2rem;
-    color: var(--second-color);
-    transition: transform 0.3s, color 0.3s;
+.skills_data:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+
+/* Skills Icon Styling */
+.skills_icon {
+    font-size: 1.5rem; /* Smaller, compact size */
+    color: #6a11cb; /* Eye-catching color for icons */
+    transition: color 0.3s;
+}
+
+.skills_data:hover .skills_icon {
+    color: #2575fc; /* Icon color changes on hover */
+}
+
 /* Skill Name Styling */
 .skill_name {
-    font-size: 1.2rem; /* Standard readable size */
+    font-size: 1rem; /* Reduced size for compact look */
     font-weight: 600;
-    color: #2c3e50;
-    text-align: left;
 }
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
-    
     .skills_data {
-        padding: 1rem; /* Adjust padding for smaller screens */
+        flex-direction: column; /* Adjust alignment for smaller screens */
+        text-align: center;
+        padding: 0.8rem; /* Adjust padding for compact layout */
     }
 
     .skills_icon {
-        font-size: 1.8rem; /* Slightly smaller icons on smaller screens */
+        font-size: 1.3rem; /* Slightly smaller icons */
     }
 
     .skill_name {
-        font-size: 1rem; /* Adjusted font size for readability */
+        font-size: 0.9rem; /* Adjusted font size for readability */
     }
 }
+
 
 
 
@@ -490,11 +498,10 @@ img{
 /* Internship Section */
 .internship_container {
     padding: 2rem 1rem;
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent glass effect */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 2px solid #d6e4ff; /* Subtle border for collections */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 25px; /* Smooth rounded corners */
-    backdrop-filter: blur(10px); /* Modern blur effect */
-    max-width: 900px;
+    max-width: 1000px;
     margin: 2rem auto; /* Centers the section */
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s; /* Interactive hover effect */
@@ -549,15 +556,16 @@ img{
 
 .projects_img {
     position: relative;
-    border-radius: .75rem;
-    border: 5px solid rgba(255, 255, 255, 0.5); /* Matches semi-transparent border of skills_container */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 25px;
+    border: 2px solid #d6e4ff; /* Subtle border for collections */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 25px; /* Smooth rounded corners */
     overflow: hidden;
     text-align: left; /* Consistent text alignment */
 }
 .projects_img:hover {
-    transform: translateY(-5px); /* Lift effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     border-radius: 1rem;
 }
 
@@ -599,15 +607,10 @@ img{
     text-decoration: none;
     transition: background-color 0.3s;
 }
-.project_info a:hover {
-    text-decoration: none;
-}
 
 /* Contact Section */
 .contact {
     padding: 2rem 1rem;
-
-    backdrop-filter: blur(10px); /* Adds modern blur effect */
     max-width: 900px; /* Matches the width of the skills and about sections */
     margin: 2rem auto; /* Centers the section on the page */
     transition: transform 0.3s, box-shadow 0.3s;
@@ -649,9 +652,9 @@ img{
     padding: 1rem;
     font-size: 1rem;
     border-radius: 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #d6e4ff; /* Subtle border for collections */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 25px; /* Smooth rounded corners */
     color: #2c3e50;
     transition: box-shadow 0.3s, transform 0.3s;
 }
@@ -827,8 +830,9 @@ img{
     }
 
     .home_img {
-        margin-top: 2rem;
-        width: 200px;
+        margin-top: 10rem;
+        width: 250px;
+        left: 25%;
         align-items: center;
     }
 }
